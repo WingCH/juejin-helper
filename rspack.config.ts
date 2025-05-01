@@ -1,9 +1,12 @@
 import { defineConfig } from '@rspack/cli';
 import { rspack } from '@rspack/core';
-import { resolve } from 'path';
+import { resolve, dirname } from 'path';
 import * as RefreshPlugin from '@rspack/plugin-react-refresh';
+import { fileURLToPath } from 'url';
 
 const isDev = process.env.NODE_ENV === 'development';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export default defineConfig({
     context: __dirname,
